@@ -17,4 +17,9 @@ export class NoteService {
     const res = await this.noteModel.find();
     return res;
   }
+
+  async findNoteByID(id: string): Promise<Note> {
+    const res = await this.noteModel.findById(id);
+    return res;
+  }
 }
