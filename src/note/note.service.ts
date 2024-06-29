@@ -12,4 +12,9 @@ export class NoteService {
     const res = await this.noteModel.create(book);
     return res;
   }
+
+  async findAll(): Promise<Note[]> {
+    const res = await this.noteModel.find();
+    return res;
+  }
 }
