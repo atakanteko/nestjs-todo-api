@@ -22,4 +22,17 @@ export class NoteService {
     const res = await this.noteModel.findById(id);
     return res;
   }
+
+  async updateById(id: string, note: Note): Promise<Note> {
+    const res = await this.noteModel.findByIdAndUpdate(id, note, {
+      new: true,
+      runValidators: true,
+    });
+    return res;
+  }
+
+  async deleteById(id: string): Promise<Note> {
+    const res = await this.noteModel.findByIdAndDelete(id);
+    return res;
+  }
 }
